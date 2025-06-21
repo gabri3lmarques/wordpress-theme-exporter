@@ -1,9 +1,10 @@
 <?php
 /**
  * Plugin Name: Theme Exporter
+ * Plugin URI: https://github.com/gabri3lmarques/wordpress-theme-exporter
  * Description: Allows you to choose an installed theme and download it as a ZIP file.
  * Version: 1.3.3
- * Author: Gabi
+ * Author: Gabriel Marques
  * License: GPL-2.0-or-later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  */
