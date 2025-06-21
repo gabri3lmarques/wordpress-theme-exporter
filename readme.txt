@@ -2,15 +2,15 @@
 Contributors: gabim
 Tags: export, themes, zip
 Requires at least: 5.0
-Tested up to: 6.5
+Tested up to: 6.8
 Requires PHP: 7.2
-Stable tag: 1.3.1
+Stable tag: 1.3.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 Easily export any installed theme as a ZIP file directly from the WordPress admin.
 
 == Changelog ==
-= 1.3.1 =
-* Added nonce verification for better security.
-* ZIP files now include a timestamp to avoid overwriting.
+= 1.3.3 =
+* Fully compliant with WordPress Coding Standards. Sanitized and unslashed all input.
+* Ready for WP 6.8.

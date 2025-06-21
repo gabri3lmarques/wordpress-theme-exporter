@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Theme Exporter
  * Description: Allows you to choose an installed theme and download it as a ZIP file.
- * Version: 1.3.1
+ * Version: 1.3.3
  * Author: Gabi
  * License: GPL-2.0-or-later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -29,10 +29,13 @@ function theme_exporter_page() {
         return;
     }
 
-    if (isset($_POST['theme_to_export'], $_POST['theme_export_nonce']) &&
-        wp_verify_nonce($_POST['theme_export_nonce'], 'theme_export')) {
+    if (isset($_POST['theme_to_export'], $_POST['theme_export_nonce'])) {
+        $nonce = sanitize_text_field(wp_unslash($_POST['theme_export_nonce']));
+        if (!wp_verify_nonce($nonce, 'theme_export')) {
+            return;
+        }
 
-        $theme_slug = sanitize_text_field($_POST['theme_to_export']);
+        $theme_slug = sanitize_text_field(wp_unslash($_POST['theme_to_export']));
         $result = theme_exporter_generate_zip($theme_slug);
 
         if (is_wp_error($result)) {
